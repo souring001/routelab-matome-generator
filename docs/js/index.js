@@ -1,4 +1,6 @@
 let map = L.map('mapcontainer');
+let totalLength = 0;
+let totalElevationGain = 0;
 
 function init() {
     map.setView([38.3, 138], 5);
@@ -29,11 +31,29 @@ elDrop.addEventListener('drop', function(event) {
 });
 
 function drawRoutes(files) {
+    totalLength = 0;
+    totalElevationGain = 0;
     for (let i=0, l=files.length; i<l; i++) {
         let file = files[i];
         fr = new FileReader();
         fr.onload = function(event) {
             gpx = event.target.result;
+
+            let parser = new DOMParser();
+            let dom = parser.parseFromString(gpx, 'text/xml');
+
+            pl = dom.getElementsByTagName('plevel');
+            elvGainText = pl[0].textContent;
+            elvGain = Number(elvGainText.slice(0, -1));
+            totalElevationGain += elvGain;
+
+            lm = dom.getElementsByTagName('length_meter');
+            lengthText = lm[0].textContent;
+            length = Number(lengthText);
+            console.log(length);
+            totalLength += length;
+            console.log(totalLength);
+
             new L.GPX(gpx, {
                 async: true,
                 marker_options: {
@@ -49,9 +69,13 @@ function drawRoutes(files) {
                     lineCap: 'round'
                 }
             }).on('loaded', function(e) {
-                console.log(e.target.get_elevation_gain());
-                console.log(e.target.get_distance());
             }).addTo(map);
+
+            let elLen = document.getElementById('length');
+            elLen.textContent = '総距離：' + totalLength/1000 + 'km';
+
+            let elElv = document.getElementById('elevationgain');
+            elElv.textContent = '総獲得標高：' + totalElevationGain + 'm';
         };
         fr.readAsText(file);
     }
