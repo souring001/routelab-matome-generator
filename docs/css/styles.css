@@ -1,0 +1,73 @@
+#dropzone {
+	background-color: #fff;
+	color: #444;
+	min-height: 50px;
+	padding: 50px 0px;
+    font-size: 16px;
+	text-shadow: 1px 1px 0 #fff;
+    text-align:center;
+    margin: 10px 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
+#dropzone.dropover {
+	background-color: #ddd;
+}
+
+#main {
+    background-color: #fff;;
+    color: #444;
+    padding: 1px 0px 10px;
+    text-shadow: 1px 1px 0 #fff;
+    margin: 0 0 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
+#header {
+    background-color: #ec1614;
+}
+
+#title {
+    font-size: 18px;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+    font-weight: 700;
+    padding: 15px 15px;
+    color: #fff;
+}
+
+#footer {
+    text-align:center;
+    color: #b1b0ae;
+    padding: 10px 0;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: #888;
+}
+
+body {
+    background-color: #f1f1f1;
+    height:100%;
+    font-family: Verdana, Arial;
+    font-size: 16px;
+    margin: 0;
+}
+
+body > #container{
+	height: auto;
+}
+
+#container {
+    min-height: 100%;
+    height: 100%;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 0px;
+    background-color: transparent;
+}
+
+p {
+    color: #444444;
+    margin: 10px;
+    font-size: 18px;
+}

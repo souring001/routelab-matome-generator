@@ -50,9 +50,7 @@ function drawRoutes(files) {
             lm = dom.getElementsByTagName('length_meter');
             lengthText = lm[0].textContent;
             length = Number(lengthText);
-            console.log(length);
             totalLength += length;
-            console.log(totalLength);
 
             new L.GPX(gpx, {
                 async: true,
