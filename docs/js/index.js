@@ -39,7 +39,8 @@ function drawRoutes(files) {
                 marker_options: {
                     startIconUrl: false,
                     endIconUrl: false,
-                    shadowUrl: false
+                    shadowUrl: false,
+                    wptIconUrls:false
                 },
                 polyline_options: {
                     color: 'red',
@@ -48,11 +49,15 @@ function drawRoutes(files) {
                     lineCap: 'round'
                 }
             }).on('loaded', function(e) {
+                console.log(e.target.get_elevation_gain());
+                console.log(e.target.get_distance());
             }).addTo(map);
         };
         fr.readAsText(file);
     }
 }
+
+
 
 function showDropping() {
     elDrop.classList.add('dropover');
