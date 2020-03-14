@@ -18,21 +18,53 @@
     background-color: #fff;;
     color: #444;
     padding: 1px 0px 10px;
-    text-shadow: 1px 1px 0 #fff;
     margin: 0 0 10px;
     box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
+#how {
+    background-color: #fff;;
+    color: #444;
+    padding: 1px 0px 10px;
+    margin: 0 0 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
+#main > iframe {
+    margin: 10px;
+    float: left;
+}
+
+#caution{
+    margin: 10px 0;
+    padding: 4px;
+    width: 300px;
+    font-size: 14px;
+    float: left;
+}
+
+#stopper {
+    clear: both;
 }
 
 #header {
     background-color: #ec1614;
 }
 
-#title {
+.main-header {
+    background-color: #f46264;
+}
+
+.title {
     font-size: 18px;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
-    padding: 15px 15px;
+    padding: 15px;
     color: #fff;
+}
+
+.head{
+    padding: 10px 15px;
 }
 
 #footer {

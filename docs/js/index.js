@@ -9,6 +9,10 @@ function init() {
     }).addTo(map);
 }
 
+function getTweet() {
+    return 'aaa';
+}
+
 let elDrop = document.getElementById('dropzone');
 let elFiles = document.getElementById('files');
 
