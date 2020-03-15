@@ -74,6 +74,16 @@ function drawRoutes(files) {
 
             let elElv = document.getElementById('elevationgain');
             elElv.textContent = '総獲得標高：' + totalElevationGain + 'm';
+
+            // var text = encodeURIComponent(document.title);
+            // var url = encodeURIComponent(location.href);
+            // var href = 'https://twitter.com/intent/tweet?text=' + text + '&url=' + url;
+            // document.getElementById('sns_twitter').setAttribute('href', href);
+
+            let text = encodeURIComponent("asdf");
+            let url = encodeURIComponent(location.href);
+            let href = 'https://twitter.com/intent/tweet?text=' + text + '&url=' + url;
+            document.getElementById('tweet-container').setAttribute('href', href);
         };
         fr.readAsText(file);
     }

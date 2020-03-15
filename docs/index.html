@@ -41,7 +41,56 @@
             <p id="length" class="fs-18">総距離：</p>
             <p id="elevationgain" class="fs-18">総獲得標高：</p>
             <div id="mapcontainer" style="width:960px;height:540px"></div>
-            <a href="https://twitter.com/intent/tweet?button_hashtag=ルートラボまとめ&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-size="large" data-text="総距離○km 総獲得標高○mでした。" data-hashtags="ルートラボ,ルートラボまとめ" data-url="https://souring001.github.io/routelab-matome-generator" data-lang="ja" data-dnt="true" data-show-count="false">Tweet Button</a>
+            <a href="https://twitter.com/intent/tweet"
+                id="tweet-container"
+                class="twitter-hashtag-button"
+                data-size="large"
+                data-lang="ja"
+                data-dnt="true"
+                data-show-count="false">Tweet Button</a>
+                <!-- <a href="https://twitter.com/intent/tweet"
+                    id="tweet-container"
+                    class="twitter-hashtag-button"
+                    data-size="large"
+                    text="総距離○km 総獲得標高○mでした。"
+                    hashtags="ルートラボ,ルートラボまとめ"
+                    url="https://souring001.github.io/routelab-matome-generator"
+                    data-lang="ja"
+                    data-dnt="true"
+                    data-show-count="false">Tweet Button</a> -->
+            <!-- <a class="twitter-hashtag-button"
+                href="https://twitter.com/intent/tweet"
+                data-size="large"
+                data-text="custom share text"
+                data-url="https://dev.twitter.com/web/tweet-button"
+                data-hashtags="example,demo"
+                data-via="twitterdev"
+                data-related="twitterapi,twitter">
+            Tweet
+            </a> -->
+            <!-- <a id="sns_twitter" target="_blank" href="https://twitter.com/intent/tweet?text=" rel="nofollow noopener"><img src="/data/img/twitter_logo_maru_50.png" width="50" height="50" srcset="/data/img/twitter_logo_maru_100.png 2x" alt="ツイート" /></a> -->
+
+<script>
+// twttr.widgets.createShareButton(
+//   "https:\/\/dev.twitter.com\/web\/tweet-button",
+//   document.getElementById("tweet-container"),
+//   {
+//     size: "large",
+//     text: "custom share text",
+//     hashtags: "example,demo",
+//     via: "twitterdev",
+//     related: "twitterapi,twitter"
+//   }
+// );
+
+//Twitterリンク生成
+window.addEventListener('DOMContentLoaded', function(){
+    var text = encodeURIComponent(document.title);
+    var url = encodeURIComponent(location.href);
+    var href = 'https://twitter.com/intent/tweet?text=' + text + '&url=' + url;
+    document.getElementById('tweet-container').setAttribute('href', href);
+}, false);
+</script>
             <p id="caution">(スクリーンショットとの共有を推奨)</p>
             <div id="stopper"></div>
         </div>
@@ -52,7 +101,7 @@
             </div>
             <ol>
               <li><p><a href="https://latlonglab.yahoo.co.jp/route/my">ルートラボのマイページ</a>を開きます。</p></li>
-              <li><p>「あなたが投稿したルート」または、<br>「あなたが★をつけたルート」の一括ダウンロードボタンを押下します。</p></li>
+              <li><p>「あなたが投稿したルート」または、<br>「あなたが★をつけたルート」の一括ダウンロードボタンを押します。</p></li>
               <li><p>ダウンロードしたZIPファイルを解凍します。<br>
               <li><p>フォルダ内の全てのファイルを選択して、ドラッグ＆ドロップします。</p></li>
             </ol>
