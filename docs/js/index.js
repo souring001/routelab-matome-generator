@@ -43,14 +43,18 @@ function drawRoutes(files) {
             let dom = parser.parseFromString(gpx, 'text/xml');
 
             pl = dom.getElementsByTagName('plevel');
-            elvGainText = pl[0].textContent;
-            elvGain = Number(elvGainText.slice(0, -1));
-            totalElevationGain += elvGain;
+            if (pl[0] != null) {
+                elvGainText = pl[0].textContent;
+                elvGain = Number(elvGainText.slice(0, -1));
+                totalElevationGain += elvGain;
+            }
 
             lm = dom.getElementsByTagName('length_meter');
-            lengthText = lm[0].textContent;
-            length = Number(lengthText);
-            totalLength += length;
+            if (lm[0] != null) {
+                lengthText = lm[0].textContent;
+                length = Number(lengthText);
+                totalLength += length;
+            }
 
             new L.GPX(gpx, {
                 async: true,
