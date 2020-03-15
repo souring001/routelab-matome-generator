@@ -78,12 +78,15 @@ function drawRoutes(files) {
 
             let elElv = document.getElementById('elevationgain');
             elElv.textContent = '総獲得標高：' + totalElevationGain + 'm';
+
+            let text = encodeURIComponent("総距離" + totalLength/1000 + "km 総獲得標高" + totalElevationGain + "mでした。\n#ルートラボ #ルートラボまとめ");
+            let url = encodeURIComponent(location.href);
+            let href = 'https://twitter.com/intent/tweet?text=' + text + '&url=' + url;
+            document.getElementById('tweet-button').setAttribute('href', href);
         };
         fr.readAsText(file);
     }
 }
-
-
 
 function showDropping() {
     elDrop.classList.add('dropover');
@@ -92,3 +95,10 @@ function showDropping() {
 function hideDropping() {
     elDrop.classList.remove('dropover');
 }
+
+window.addEventListener('DOMContentLoaded', function(){
+    let text = encodeURIComponent("総距離○km 総獲得標高○mでした。\n#ルートラボ #ルートラボまとめ");
+    let url = encodeURIComponent(location.href);
+    let href = 'https://twitter.com/intent/tweet?text=' + text + '&url=' + url;
+    document.getElementById('tweet-button').setAttribute('href', href);
+}, false);
